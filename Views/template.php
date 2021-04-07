@@ -1,21 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title> </title>
-    <link rel="stylesheet" type="text/css" href="Styles/style.css">
-</head>
-<body>
+<!-- Require o top bar padrão aqui -->
 
-<!--  Cabeçalho ou sidebar padrão das páginas  -->
+<?php // include("./banco/conexao.php"); ?>
 
-
-<!-- -------------------------->
-<?php
-$this->carregarViewNoTemplate($nomeDaView);
+<?php 
+    $this->CarregarViewNoTemplate($nomeView, $dadosModel); // Aqui é chamado sempre uma view dependendo no momento, é dinamico
 ?>
-<!-- -------------------------->
 
-
-<!--  Rodapé padrão das páginas  -->
-</body>
-</html>
+<!-- Require o bottom bar/rodapé padrão aqui -->
