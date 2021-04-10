@@ -3,15 +3,44 @@
 Class homeController extends Controller{
     public function index()
     {
-        //chama model (informaçoes do banco)
-        //chama view 
-        //fazer juncao do back com o front
+        try {
+            // 1 - chama a funcao na model animais, conectando-se com o banco e trazendo dados
+            $animais = new Animais();
+            $result = $animais->getAvaiableAnimals();
 
-       /* $a = new animal();
-        $animais = $a->getAnimais();*/
-        // /\ passo1
+            // 2 - Com esses dados do banco, o controller pega, trata se precisar e manda pra view exibir pro usuário
+            $this->carregarTemplate('home', array(), $result); //segundo parametro tem restrição de passagem, entao usa o terceiro pro momento
 
-    $this->carregarTemplate('home'/*,$animais*/); //outros passos
+        } catch (Exception $error){
+            echo $error->getMessage();
+        }
+    }
+    public function editar()
+    {
+        try {
+            // 1 - chama a funcao na model animais, conectando-se com o banco e trazendo dados
+            $animais = new Animais();
+            $result = $animais->getAvaiableAnimals();
 
+            // 2 - Com esses dados do banco, o controller pega, trata se precisar e manda pra view exibir pro usuário
+            $this->carregarTemplate('home', array(), $result); //segundo parametro tem restrição de passagem, entao usa o terceiro pro momento
+
+        } catch (Exception $error){
+            echo $error->getMessage();
+        }
+    }
+    public function maisInfo()
+    {
+        try {
+            // 1 - chama a funcao na model animais, conectando-se com o banco e trazendo dados
+            $animais = new Animais();
+            $result = $animais->getAvaiableAnimals();
+
+            // 2 - Com esses dados do banco, o controller pega, trata se precisar e manda pra view exibir pro usuário
+            $this->carregarTemplate('home', array(), $result); //segundo parametro tem restrição de passagem, entao usa o terceiro pro momento
+
+        } catch (Exception $error){
+            echo $error->getMessage();
+        }
     }
 }
